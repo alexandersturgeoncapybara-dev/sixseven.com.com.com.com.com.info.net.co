@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Snake — StrongDog-style</title>
+<style>
+  :root{
+    --bg:#0f1720;
+    --panel:#0b1220;
+    --accent:#48c78e;
+    --muted:#9aa6b2;
+    --danger:#ff6b6b;
+  }
+  html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial}
+  body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+    background:
+      radial-gradient(1000px 400px at 10% 10%, rgba(72,199,142,0.06), transparent 10%),
+      radial-gradient(800px 300px at 90% 90%, rgba(72,199,142,0.03), transparent 10%),
+      var(--bg);
+    color:#e6eef6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .container{
+    display:grid;
+    grid-template-columns: 420px 260px;
+    gap:18px;
+    align-items:start;
+  }
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:12px;
+    box-shadow: 0 6px 24px rgba(2,6,23,0.6);
+    padding:16px;
+    color:inherit;
+  }
+
+  canvas{
+    width:400px;
+    height:400px;
+    display:block;
+    background: linear-gradient(180deg, #072026 0%, #03131a 100%);
+    border-radius:10px;
+    box-shadow: inset 0 6px 12px rgba(0,0,0,0.6);
+    image-rendering:pixelated;
+  }
+
+  .hud{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:10px;
+    gap:8px;
+  }
+
+  .score{
+    font-weight:700;
+    font-size:18px;
+    color:var(--accent);
+  }
+
+  .controls{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+  button{
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.06);
+    color:var(--muted);
+    padding:8px 10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+  }
+  button:active{transform:translateY(1px)}
+  .danger{border-color:rgba(255,107,107,0.15); color:var(--danger)}
+  .primary{border-color:rgba(72,199,142,0.12); color:var(--accent)}
+
+  .sidebar h2{margin:0 0 8px 0;font-size:18px}
+  .sidebar p{margin:0;color:var(--muted);font-size:14px}
+
+  .big{
+    font-size:28px;
+    font-we
